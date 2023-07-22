@@ -174,12 +174,12 @@ function logMessage(message) {
       // 滚动到最底部
   logContainer.scrollTop = logContainer.scrollHeight;
 
-  // 控制日志数量，删除多余的日志
-  const logEntries = logContainer.children;
-  if (logEntries.length > MAX_LOG_ENTRIES) {
-for (let i = logEntries.length - 1; i >= 0; i--) {
-  logContainer.removeChild(logEntries[i]);
-}
+//   // 控制日志数量，删除多余的日志
+//   const logEntries = logContainer.children;
+//   if (logEntries.length > MAX_LOG_ENTRIES) {
+// for (let i = logEntries.length - 1; i >= 0; i--) {
+//   logContainer.removeChild(logEntries[i]);
+// }
   }
 }
 

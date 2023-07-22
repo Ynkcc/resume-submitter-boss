@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Boss直聘自动投递简历
 // @namespace    your-namespace
-// @version      1.4
+// @version      1.4.1
 // @description  自动投递简历的油猴脚本，包括统计投递数量、配置参数和输出日志功能。
 // @match        https://www.zhipin.com/web/geek/*
 // @grant        GM_addStyle
@@ -265,6 +265,7 @@ function checkSalaryWithRequirement(salaryStr, requirement, STATES) {
 function nextPage() {
     var nextButton = document.querySelector("#container > div.user-jobs-area > div > div.job-list-wrapper > div > div > div > div > a i.ui-icon-arrow-right");
     if (nextButton.parentElement.classList.contains("disabled")) {
+        toggleButton.textContent = '开启投递';
         isDeliveryRunning = false; // 将投递状态设置为停止
         logMessage("到达最后一页")
         return;
@@ -368,7 +369,7 @@ function loopWithDelay(i){
                 .catch(error => {
                 console.error("请求工作详情出错:", error);
             });
-
+//这里调投递延时 1000=1秒
   setTimeout(() => {loopWithDelay(i+1)}, 2000);
 }
     loopWithDelay(0);
@@ -382,7 +383,7 @@ function submitResume() {
         nextPage();
         if(!isDeliveryRunning)return;
         submitResume();
-        //这里调延时 1000=1秒
+        //这里调翻页延时 1000=1秒
     }, 4000);
 }
 

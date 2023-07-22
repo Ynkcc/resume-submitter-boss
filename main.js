@@ -286,7 +286,7 @@ function selectNeed() {
     var localPassedCount=0;
     // 获取所有工作根元素
     var elements = document.getElementsByClassName('job-card-wrapper');
-    var i=0;
+
 function loopWithDelay(i){
 
     if(i>=elements.length){return;}
@@ -361,6 +361,7 @@ function loopWithDelay(i){
 
   setTimeout(loopWithDelay(i+1), 2000);
 }
+    loopWithDelay(0);
 }
 
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Boss直聘自动投递简历
 // @namespace    your-namespace
-// @version      1.4.1
+// @version      1.4.2
 // @description  自动投递简历的油猴脚本，包括统计投递数量、配置参数和输出日志功能。
 // @match        https://www.zhipin.com/web/geek/*
 // @grant        GM_addStyle
@@ -177,9 +177,9 @@ function logMessage(message) {
   // 控制日志数量，删除多余的日志
   const logEntries = logContainer.children;
   if (logEntries.length > MAX_LOG_ENTRIES) {
-    for (let i = 0; i < logEntries.length - MAX_LOG_ENTRIES; i++) {
-      logContainer.removeChild(logEntries[i]);
-    }
+for (let i = logEntries.length - 1; i >= 0; i--) {
+  logContainer.removeChild(logEntries[i]);
+}
   }
 }
 

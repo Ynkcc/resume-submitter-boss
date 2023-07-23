@@ -180,7 +180,7 @@ function logMessage(message) {
 // for (let i = logEntries.length - 1; i >= 0; i--) {
 //   logContainer.removeChild(logEntries[i]);
 // }
-  }
+//  }
 }
 
 

@@ -235,13 +235,18 @@ let isDeliveryRunning = false; // 标志变量，用于表示投递状态
 
 // 辅助函数，用于判断字符串是否包含列表中的任何一个关键词
 function hasKeyword(text, keywords) {
-    for (var i = 0; i < keywords.length; i++) {
-        if (text.includes(keywords[i])) {
+    //不区分大小写
+    const lowerText = text.toLowerCase(); // 将输入文本转换为小写
+    const lowerKeywords = keywords.map(keyword => keyword.toLowerCase()); // 将关键字数组中的所有元素转换为小写
+
+    for (var i = 0; i < lowerKeywords.length; i++) {
+        if (lowerText.includes(lowerKeywords[i])) {
             return true;
         }
     }
     return false;
 }
+
 
 // 辅助函数，用于检查薪资要求
 function checkSalaryWithRequirement(salaryStr, requirement, STATES) {

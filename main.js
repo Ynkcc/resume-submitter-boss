@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Boss直聘自动投递简历
 // @namespace    your-namespace
-// @version      1.4.4
+// @version      1.4.5
 // @description  自动投递简历的油猴脚本，包括统计投递数量、配置参数和输出日志功能。
 // @match        https://www.zhipin.com/web/geek/*
 // @grant        GM_addStyle
@@ -258,7 +258,7 @@ function checkSalaryWithRequirement(salaryStr, requirement, STATES) {
         const maxSalary = parseInt(match[2]);
         const withBonus = match[3] ? parseInt(match[3]) : 12; // 默认为12薪
 
-        const salaryToCompare = STATES=== BUTTON_STATES.WHITELIST ? minSalary * (withBonus / 12) : maxSalary * (withBonus / 12);
+        const salaryToCompare = STATES=== BUTTON_STATES.WHITELIST ? maxSalary * (withBonus / 12) : minSalary * (withBonus / 12);
         return salaryToCompare >= requirement;
     }
 

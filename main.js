@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Boss直聘自动投递简历
 // @namespace    your-namespace
-// @version      1.4.9
+// @version      1.5.0
 // @description  自动投递简历的油猴脚本，包括统计投递数量、配置参数和输出日志功能。
 // @match        https://www.zhipin.com/web/geek/*
 // @grant        GM_addStyle
@@ -365,8 +365,8 @@ function loopWithDelay(i){
                         .then(data => {
                             if(data.code==1){
                                 logMessage("今日沟通人数已达上限，请明天再试");
-                                        toggleButton.textContent = '开启投递';
-        isDeliveryRunning = false; // 将投递状态设置为停止
+                                toggleButton.textContent = '开启投递';
+        isDe                    liveryRunning = false; // 将投递状态设置为停止
                                 return;
                             }
                         logMessage('已投递：'+jobTitle)

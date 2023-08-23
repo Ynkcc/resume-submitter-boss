@@ -347,7 +347,8 @@ function loopWithDelay(i){
                     !(jobLocationToggle.textContent === BUTTON_STATES.WHITELIST && !hasKeyword(jobLocation, jobLocationKeywords)) &&
                     checkSalaryWithRequirement(salary, parseInt(salaryThresholdInput.value), salaryThresholdToggle.textContent)&&
                     !hasKeyword(activeTimeDesc, activeTimeDescKeywords)&&
-                    element.querySelector("div.job-card-body.clearfix > a > div.job-info.clearfix > a").textContent==="立即沟通"
+                    element.querySelector("div.job-card-body.clearfix > a > div.job-info.clearfix > a").textContent==="立即沟通"&&
+                    isDeliveryRunning
                 ) {
                     const friendAddUrl = `https://www.zhipin.com/wapi/zpgeek/friend/add.json?lid=${lid}&securityId=${securityId}&sessionId=${sessionId}`;
                     // 获取 cookie 中的 "geek_zp_token"

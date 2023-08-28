@@ -366,7 +366,7 @@ function loopWithDelay(i){
                             if(data.code==1){
                                 logMessage("今日沟通人数已达上限，请明天再试");
                                 toggleButton.textContent = '开启投递';
-        isDe                    liveryRunning = false; // 将投递状态设置为停止
+                                liveryRunning = false; // 将投递状态设置为停止
                                 return;
                             }
                         logMessage('已投递：'+jobTitle)
